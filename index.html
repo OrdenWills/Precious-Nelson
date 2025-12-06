@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <title>Precious Nelson | Executive Virtual Assistant</title>
-    
+
     <!-- Fonts: Playfair Display (Headers) and Poppins (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         /* --- VARIABLES & RESET --- */
         :root {
-            --bg-dark: #0a0e27; /* Deep Blue from screenshots */
+            --bg-dark: #0a0e27;
+            /* Deep Blue from screenshots */
             --bg-gradient: linear-gradient(135deg, #050510 0%, #1a1f50 100%);
             --gold: #eebb5d;
             --text-white: #ffffff;
@@ -24,7 +45,8 @@
             --glass-bg: rgba(255, 255, 255, 0.08);
             --glass-border: rgba(255, 255, 255, 0.15);
             --glass-blur: 15px;
-            --pink-accent: #ff4081; /* For the X marks */
+            --pink-accent: #ff4081;
+            /* For the X marks */
         }
 
         * {
@@ -43,7 +65,10 @@
             min-height: 100vh;
         }
 
-        h1, h2, h3, h4 {
+        h1,
+        h2,
+        h3,
+        h4 {
             font-family: 'Playfair Display', serif;
             color: var(--gold);
         }
@@ -70,9 +95,14 @@
             padding: 80px 0;
         }
 
-        .text-center { text-align: center; }
-        .gold-text { color: var(--gold); }
-        
+        .text-center {
+            text-align: center;
+        }
+
+        .gold-text {
+            color: var(--gold);
+        }
+
         /* Glassmorphism Class */
         .glass-card {
             background: var(--glass-bg);
@@ -179,7 +209,7 @@
             border: 5px solid var(--gold);
             box-shadow: 0 0 50px rgba(238, 187, 93, 0.3);
         }
-        
+
         .hero-img-container img {
             width: 100%;
             height: 100%;
@@ -235,7 +265,8 @@
 
         /* --- SLIDING TAB SECTION (Projects & Testimonials) --- */
         .sliding-section {
-            overflow: hidden; /* Hides the part that slides out */
+            overflow: hidden;
+            /* Hides the part that slides out */
             position: relative;
         }
 
@@ -265,12 +296,13 @@
         /* The sliding container width = 200% (100% for projects + 100% for testimonials) */
         .slider-wrapper {
             display: flex;
-            width: 200%; 
+            width: 200%;
             transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .slide-panel {
-            width: 50%; /* Each panel takes half of the 200% wrapper (so 100% screen) */
+            width: 50%;
+            /* Each panel takes half of the 200% wrapper (so 100% screen) */
             padding: 0 10px;
         }
 
@@ -295,7 +327,7 @@
 
         .tech-tag {
             font-size: 0.8rem;
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             padding: 3px 8px;
             border-radius: 4px;
             margin-right: 5px;
@@ -331,6 +363,7 @@
             gap: 25px;
             margin-top: 30px;
         }
+
         .tool-icon {
             width: 60px;
             height: 60px;
@@ -382,19 +415,24 @@
                 text-align: center;
                 padding-top: 100px;
             }
+
             .hero-img-container {
                 width: 280px;
                 height: 280px;
             }
+
             .about-content {
                 flex-direction: column;
             }
+
             .nav-links {
-                display: none; /* Simple mobile hide for demo */
+                display: none;
+                /* Simple mobile hide for demo */
             }
         }
     </style>
 </head>
+
 <body>
 
     <!-- Header -->
@@ -417,13 +455,15 @@
         <div class="hero-text">
             <h4>EXECUTIVE VIRTUAL ASSISTANT</h4>
             <h1>Ready to simplify your workload? Let's work together.</h1>
-            <p>I help business owners save 10+ hours weekly by handling admin, research, legal documents, and travel logistics. Simple. Seamless. Reliable.</p>
+            <p>I help business owners save 10+ hours weekly by handling admin, research, legal documents, and travel
+                logistics. Simple. Seamless. Reliable.</p>
             <a href="#contact" class="btn btn-primary">Book a Discovery Call</a>
         </div>
         <div class="hero-image">
             <div class="hero-img-container">
                 <!-- REPLACE WITH: assets/profile-hero.jpg -->
-                <img src="assets/profile-hero.jpg" alt="Precious Nelson" onerror="this.src='https://placehold.co/400x400/1a1f50/eebb5d?text=Precious+Nelson'">
+                <img src="assets/profile-1.png" alt="Precious Nelson"
+                    onerror="this.src='https://placehold.co/400x400/1a1f50/eebb5d?text=Precious+Nelson'">
             </div>
         </div>
     </section>
@@ -434,12 +474,15 @@
             <div class="about-text">
                 <h2>Why Hire Me?</h2>
                 <br>
-                <p>I'm Precious, an Executive Virtual Assistant who brings order, clarity, and calm to fast-moving workspaces. I don't wait for instructions to start solving problems.</p>
+                <p>I'm Precious, an Executive Virtual Assistant who brings order, clarity, and calm to fast-moving
+                    workspaces. I don't wait for instructions to start solving problems.</p>
                 <br>
                 <ul style="list-style: none; padding-left: 0;">
                     <li style="margin-bottom: 10px;">✔ I think ahead and adapt quickly to your work style.</li>
-                    <li style="margin-bottom: 10px;">✔ I am structured, detail-oriented, and organized under pressure.</li>
-                    <li style="margin-bottom: 10px;">✔ I thrive in fast-paced environments handling high-volume schedules.</li>
+                    <li style="margin-bottom: 10px;">✔ I am structured, detail-oriented, and organized under pressure.
+                    </li>
+                    <li style="margin-bottom: 10px;">✔ I thrive in fast-paced environments handling high-volume
+                        schedules.</li>
                     <li>✔ I bring the mindset of a partner, not a passive assistant.</li>
                 </ul>
             </div>
@@ -497,7 +540,7 @@
 
     <!-- SLIDING SECTION (Projects & Testimonials) -->
     <section id="portfolio" class="section-padding container sliding-section">
-        
+
         <!-- Controls -->
         <div class="tab-controls">
             <button class="tab-btn active" onclick="showTab('projects')">Portfolio Projects</button>
@@ -506,16 +549,18 @@
 
         <!-- Sliding Wrapper -->
         <div class="slider-wrapper" id="slider">
-            
+
             <!-- PANEL 1: PROJECTS -->
             <div class="slide-panel">
                 <div class="projects-grid">
                     <!-- Project 1: Travel -->
                     <div class="glass-card project-card">
                         <!-- REPLACE WITH: assets/project-travel.jpg -->
-                        <img src="assets/project-travel.jpg" class="project-img" alt="Travel Management" onerror="this.src='https://placehold.co/600x400/1a1f50/FFF?text=Travel+Itinerary'">
+                        <img src="assets/project-travel.png" class="project-img" alt="Travel Management"
+                            onerror="this.src='https://placehold.co/600x400/1a1f50/FFF?text=Travel+Itinerary'">
                         <h4>Travel Management</h4>
-                        <p style="font-size: 0.9rem; color: #ccc; margin: 10px 0;">Flight research, hotel booking, and detailed itinerary creation for stress-free logistics.</p>
+                        <p style="font-size: 0.9rem; color: #ccc; margin: 10px 0;">Flight research, hotel booking, and
+                            detailed itinerary creation for stress-free logistics.</p>
                         <div>
                             <span class="tech-tag">Booking</span>
                             <span class="tech-tag">Logistics</span>
@@ -525,9 +570,11 @@
                     <!-- Project 2: SEO Writing -->
                     <div class="glass-card project-card">
                         <!-- REPLACE WITH: assets/project-seo.jpg -->
-                        <img src="assets/project-seo.jpg" class="project-img" alt="SEO Writing" onerror="this.src='https://placehold.co/600x400/1a1f50/FFF?text=SEO+Content'">
+                        <img src="assets/project-seo.png" class="project-img" alt="SEO Writing"
+                            onerror="this.src='https://placehold.co/600x400/1a1f50/FFF?text=SEO+Content'">
                         <h4>SEO Content Writing</h4>
-                        <p style="font-size: 0.9rem; color: #ccc; margin: 10px 0;">Keyword research (Semrush/Moz) resulting in 40% organic traffic increase.</p>
+                        <p style="font-size: 0.9rem; color: #ccc; margin: 10px 0;">Keyword research (Semrush/Moz)
+                            resulting in 40% organic traffic increase.</p>
                         <div>
                             <span class="tech-tag">SEO</span>
                             <span class="tech-tag">Blogging</span>
@@ -537,21 +584,25 @@
                     <!-- Project 3: Expenses -->
                     <div class="glass-card project-card">
                         <!-- REPLACE WITH: assets/project-expense.jpg -->
-                        <img src="assets/project-expense.jpg" class="project-img" alt="Expense Reporting" onerror="this.src='https://placehold.co/600x400/1a1f50/FFF?text=Expense+Reports'">
+                        <img src="assets/project-expense.png" class="project-img" alt="Expense Reporting"
+                            onerror="this.src='https://placehold.co/600x400/1a1f50/FFF?text=Expense+Reports'">
                         <h4>Expense Reporting</h4>
-                        <p style="font-size: 0.9rem; color: #ccc; margin: 10px 0;">Accurate tracking and categorization of expenses using spreadsheets and financial tools.</p>
+                        <p style="font-size: 0.9rem; color: #ccc; margin: 10px 0;">Accurate tracking and categorization
+                            of expenses using spreadsheets and financial tools.</p>
                         <div>
                             <span class="tech-tag">Excel</span>
                             <span class="tech-tag">Finance</span>
                         </div>
                     </div>
 
-                     <!-- Project 4: Calendar -->
-                     <div class="glass-card project-card">
+                    <!-- Project 4: Calendar -->
+                    <div class="glass-card project-card">
                         <!-- REPLACE WITH: assets/project-calendar.jpg -->
-                        <img src="assets/project-calendar.jpg" class="project-img" alt="Calendar Mgmt" onerror="this.src='https://placehold.co/600x400/1a1f50/FFF?text=Calendar+Mgmt'">
+                        <img src="assets/project-calendar.png" class="project-img" alt="Calendar Mgmt"
+                            onerror="this.src='https://placehold.co/600x400/1a1f50/FFF?text=Calendar+Mgmt'">
                         <h4>Calendar Management</h4>
-                        <p style="font-size: 0.9rem; color: #ccc; margin: 10px 0;">Coordinated high-volume appointments avoiding conflicts across time zones.</p>
+                        <p style="font-size: 0.9rem; color: #ccc; margin: 10px 0;">Coordinated high-volume appointments
+                            avoiding conflicts across time zones.</p>
                         <div>
                             <span class="tech-tag">Google Cal</span>
                             <span class="tech-tag">Calendly</span>
@@ -563,13 +614,15 @@
             <!-- PANEL 2: TESTIMONIALS -->
             <div class="slide-panel">
                 <div class="testimonials-grid">
-                    
+
                     <!-- Client 1 -->
                     <div class="glass-card">
-                        <p>"One thing I love was her presentation and attention to detail, she didn't just come back with what I needed she also presented it in a way that was appealing."</p>
+                        <p>"One thing I love was her presentation and attention to detail, she didn't just come back
+                            with what I needed she also presented it in a way that was appealing."</p>
                         <div class="client-profile">
                             <!-- REPLACE WITH: assets/client-bright.jpg -->
-                            <img src="assets/client-bright.jpg" class="client-img" alt="Bright" onerror="this.src='https://placehold.co/100x100?text=BD'">
+                            <img src="assets/Bright-Djedje.jpeg" class="client-img" alt="Bright"
+                                onerror="this.src='https://placehold.co/100x100?text=BD'">
                             <div>
                                 <h4>Bright Djedje</h4>
                                 <span style="font-size: 0.8rem; color: var(--gold);">Founder, Reccur</span>
@@ -579,10 +632,12 @@
 
                     <!-- Client 2 -->
                     <div class="glass-card">
-                        <p>"She thinks fast, takes initiative and handles tasks so smoothly. Honestly, working with her makes everything easier. She is always up and running."</p>
+                        <p>"She thinks fast, takes initiative and handles tasks so smoothly. Honestly, working with her
+                            makes everything easier. She is always up and running."</p>
                         <div class="client-profile">
                             <!-- REPLACE WITH: assets/client-titilope.jpg -->
-                            <img src="assets/client-titilope.jpg" class="client-img" alt="Titilope" onerror="this.src='https://placehold.co/100x100?text=TA'">
+                            <img src="assets/Titilope Arogundade.jpeg" class="client-img" alt="Titilope"
+                                onerror="this.src='https://placehold.co/100x100?text=TA'">
                             <div>
                                 <h4>Titilope Arogundade</h4>
                                 <span style="font-size: 0.8rem; color: var(--gold);">Client</span>
@@ -592,10 +647,12 @@
 
                     <!-- Client 3 -->
                     <div class="glass-card">
-                        <p>"She handled everything with care and precision. She is proactive, communicative, and genuinely invested in producing results. Highly recommend Precious."</p>
+                        <p>"She handled everything with care and precision. She is proactive, communicative, and
+                            genuinely invested in producing results. Highly recommend Precious."</p>
                         <div class="client-profile">
                             <!-- REPLACE WITH: assets/client-aderonke.jpg -->
-                            <img src="assets/client-aderonke.jpg" class="client-img" alt="Aderonke" onerror="this.src='https://placehold.co/100x100?text=AF'">
+                            <img src="assets/Aderonke Fatile.jpeg" class="client-img" alt="Aderonke"
+                                onerror="this.src='https://placehold.co/100x100?text=AF'">
                             <div>
                                 <h4>Aderonke Fatile</h4>
                                 <span style="font-size: 0.8rem; color: var(--gold);">Thought Leader</span>
@@ -656,7 +713,8 @@
                     </div>
                 </div>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/precynelson" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/precynelson" target="_blank"><i
+                            class="fab fa-linkedin"></i></a>
                     <a href="mailto:preciouschideranelson@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
@@ -671,7 +729,7 @@
         function showTab(tabName) {
             const slider = document.getElementById('slider');
             const buttons = document.querySelectorAll('.tab-btn');
-            
+
             // Handle Slide Movement
             if (tabName === 'projects') {
                 slider.style.transform = 'translateX(0)';
@@ -685,4 +743,5 @@
         }
     </script>
 </body>
+
 </html>
