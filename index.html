@@ -144,8 +144,38 @@
             gap: 30px;
         }
 
+        .nav-links a {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
         .nav-links a:hover {
             color: var(--gold);
+        }
+
+        .nav-links a.active {
+            color: var(--gold);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gold);
+            animation: slideIn 0.3s ease;
+        }
+
+        @keyframes slideIn {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
         }
 
         /* --- HERO SECTION --- */
@@ -562,7 +592,8 @@
             <h1>Ready to simplify your workload? Let's work together.</h1>
             <p>I help business owners save 10+ hours weekly by handling admin, research, legal documents, and travel
                 logistics. Simple. Seamless. Reliable.</p>
-            <a href="https://calendly.com/preciousnelson/15min" target="_blank" class="btn btn-primary">Book a Discovery Call</a>
+            <a href="https://calendly.com/preciousnelson/15min" target="_blank" class="btn btn-primary">Book a Discovery
+                Call</a>
         </div>
         <div class="hero-image">
             <div class="hero-img-container">
@@ -887,6 +918,40 @@
                     closeModal(e);
                 }
             });
+
+            // Navbar scroll highlighting
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-links a');
+
+            function highlightNavOnScroll() {
+                const scrollY = window.pageYOffset;
+
+                sections.forEach(section => {
+                    const sectionHeight = section.offsetHeight;
+                    const sectionTop = section.offsetTop - 100; // Offset for fixed header
+                    const sectionId = section.getAttribute('id');
+
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+
+                // Remove active class when at the very top (hero section)
+                if (scrollY < 100) {
+                    navLinks.forEach(link => link.classList.remove('active'));
+                }
+            }
+
+            // Listen to scroll events
+            window.addEventListener('scroll', highlightNavOnScroll);
+
+            // Initial check on page load
+            highlightNavOnScroll();
         });
     </script>
 </body>
