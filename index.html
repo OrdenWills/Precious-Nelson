@@ -139,6 +139,135 @@
             text-transform: uppercase;
         }
 
+        /* Mobile Menu Toggle Button */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle span {
+            width: 100%;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: translateY(11px) rotate(45deg);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: translateY(-11px) rotate(-45deg);
+        }
+
+        /* Mobile Menu Modal */
+        .mobile-nav-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(10, 14, 39, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .mobile-nav-modal.active {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-nav-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            gap: 30px;
+            padding: 80px 20px 20px;
+        }
+
+        .mobile-nav-content a {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-white);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: all 0.3s ease;
+            position: relative;
+            padding: 10px 20px;
+        }
+
+        .mobile-nav-modal.active .mobile-nav-content a {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mobile-nav-modal.active .mobile-nav-content a:nth-child(1) {
+            transition-delay: 0.1s;
+        }
+
+        .mobile-nav-modal.active .mobile-nav-content a:nth-child(2) {
+            transition-delay: 0.2s;
+        }
+
+        .mobile-nav-modal.active .mobile-nav-content a:nth-child(3) {
+            transition-delay: 0.3s;
+        }
+
+        .mobile-nav-modal.active .mobile-nav-content a:nth-child(4) {
+            transition-delay: 0.4s;
+        }
+
+        .mobile-nav-content a:hover {
+            color: var(--gold);
+            transform: scale(1.1);
+        }
+
+        .mobile-nav-content a.active {
+            color: var(--gold);
+        }
+
+        .mobile-nav-content a::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 5px;
+            width: 0;
+            height: 3px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .mobile-nav-content a:hover::before,
+        .mobile-nav-content a.active::before {
+            width: 100%;
+        }
+
         .nav-links {
             display: flex;
             gap: 30px;
@@ -550,7 +679,10 @@
 
             .nav-links {
                 display: none;
-                /* Simple mobile hide for demo */
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
             }
 
             .modal-image-container {
@@ -581,9 +713,25 @@
                     <a href="#portfolio">Portfolio</a>
                     <a href="#contact">Contact</a>
                 </div>
+                <!-- Mobile Menu Toggle -->
+                <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </nav>
         </div>
     </header>
+
+    <!-- Mobile Navigation Modal -->
+    <div class="mobile-nav-modal" id="mobileNavModal">
+        <div class="mobile-nav-content">
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#services" class="mobile-nav-link">Services</a>
+            <a href="#portfolio" class="mobile-nav-link">Portfolio</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero container">
@@ -952,6 +1100,70 @@
 
             // Initial check on page load
             highlightNavOnScroll();
+
+            // Mobile Menu Toggle
+            const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+            const mobileNavModal = document.getElementById('mobileNavModal');
+            const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+            function toggleMobileMenu() {
+                mobileMenuToggle.classList.toggle('active');
+                mobileNavModal.classList.toggle('active');
+                document.body.style.overflow = mobileNavModal.classList.contains('active') ? 'hidden' : '';
+            }
+
+            function closeMobileMenu() {
+                mobileMenuToggle.classList.remove('active');
+                mobileNavModal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            // Toggle menu on button click
+            mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+
+            // Close menu when clicking on a link
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', function () {
+                    closeMobileMenu();
+                    // Highlight active link in mobile menu
+                    mobileNavLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+
+            // Close menu on ESC key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && mobileNavModal.classList.contains('active')) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Update mobile nav active state on scroll
+            function updateMobileNavOnScroll() {
+                const scrollY = window.pageYOffset;
+
+                sections.forEach(section => {
+                    const sectionHeight = section.offsetHeight;
+                    const sectionTop = section.offsetTop - 100;
+                    const sectionId = section.getAttribute('id');
+
+                    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                        mobileNavLinks.forEach(link => {
+                            link.classList.remove('active');
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active');
+                            }
+                        });
+                    }
+                });
+
+                if (scrollY < 100) {
+                    mobileNavLinks.forEach(link => link.classList.remove('active'));
+                }
+            }
+
+            window.addEventListener('scroll', updateMobileNavOnScroll);
+            updateMobileNavOnScroll();
         });
     </script>
 </body>
